@@ -1,38 +1,124 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 100vh;
+  overflow-x: hidden;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.title-box {
   text-align: center;
+  padding: 1rem 9rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title-box h1 {
+  font-size: 2.3rem;
+  margin: 0rem 0 1rem 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title-box p {
+  font-size: 1rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.color-box {
+  border-radius: 20px;
+  position: absolute;
+  left: 180px;
+  top: 80px;
+  width: 77vw;
+  height: 80vh;
+  z-index: -1;
+  background-image: linear-gradient(to bottom right, #fff, #e7f5fe, #d7e7fe);
+}
+.form {
+  background-color: white;
+  padding: 2rem 1rem;
+  margin: 0 11rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 1px 3px 6px;
+  border-radius: 20px;
+}
+.radio-container {
+  display: flex;
+  gap: 2rem;
+  margin: 0.5rem 0;
+}
+.measurement {
+  display: flex;
+  gap: 2rem;
+  margin: 0.5rem 0;
+}
+.height,
+.width {
+  position: relative;
+}
+.height label {
+  color: gray;
+  display: block;
+}
+.weight label {
+  color: gray;
+  display: block;
 }
 
-.App-link {
-  color: #61dafb;
+.form-btn {
+  background-color: #3b8bfb;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.results {
+  background: #d7e7fe;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-top: 1rem;
+}
+.results h4 {
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+}
+@media (max-width: 1024px) {
+  .color-box {
+    left: 110px;
   }
-  to {
-    transform: rotate(360deg);
+  .title-box {
+    padding: 1rem 6rem;
+  }
+  .form {
+    margin: 0 7rem;
+  }
+}
+@media (max-width: 769px) {
+  .color-box {
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  .title-box {
+    padding: 1rem 4rem;
+  }
+  .form {
+    margin: 0 5rem;
+  }
+}
+@media (max-width: 426px) {
+  .color-box {
+    height: 200vh;
+    width: 200vw;
+  }
+  .header {
+    justify-content: center;
+    align-items: center;
   }
 }
